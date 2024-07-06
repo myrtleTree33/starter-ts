@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "pre-commit@latest",
+      "python3",
+      "poetry"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox (Python environment)!' > /dev/null",
+      "echo 'installing dependencies...'",
+      "(cd backend && pre-commit autoupdate && pre-commit install)",
+      "clear",
+      "poetry shell",
+      "poetry install",
+      "echo '-----------------------------------------'",
+      "echo 'Welcome to Python + Poetry playground!'",
+      "echo '-----------------------------------------'"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
